@@ -1,0 +1,13 @@
+services:
+  postgres:
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - tutcy-keramik-postgres:/var/lib/postgresql/tutcy-kearamik2'
+    ports:
+      - '5438:5432'
+    image: 'postgres:15'
+
+volumes:
+  tutcy-keramik-postgres:
