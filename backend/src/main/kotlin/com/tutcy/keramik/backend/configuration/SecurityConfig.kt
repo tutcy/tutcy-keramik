@@ -22,8 +22,6 @@ class SecurityConfig {
     @Bean
     fun web(http: HttpSecurity): SecurityFilterChain {
         http
-            .cors { }
-            .csrf { it.disable() }
             .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
             .headers { it.contentSecurityPolicy { policyConfig -> policyConfig.policyDirectives("default-src 'self'; connect-src 'self' http://localhost:48888; script-src 'self'; img-src 'self' data:") } }
             .httpBasic { it.disable() }
