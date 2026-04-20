@@ -1,0 +1,16 @@
+@layer base {
+  :root {
+    --color-primary: #3b82f6; /* Blau */
+    --color-bg: #ffffff;
+  }
+
+  [data-theme='forest'] {
+    --color-primary: #10b981; /* Grün */
+    --color-bg: #f0fdf4;
+  }
+}
+
+@theme {
+  --color-brand: var(--color-primary);
+  --bg-main: var(--color-bg);
+}
