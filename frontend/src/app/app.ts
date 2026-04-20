@@ -1,15 +1,21 @@
-import {Component, signal} from '@angular/core';
+import {Component} from '@angular/core';
 import {RouterLink, RouterOutlet} from '@angular/router';
+import {TranslateModule, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   imports: [
     RouterLink,
-    RouterOutlet
+    RouterOutlet,
+    TranslateModule
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('tutcy-keramik');
+  constructor(public translate: TranslateService) {
+    this.translate.addLangs(['de', 'en']);
+    this.translate.setDefaultLang('de');
+    this.translate.use('de');
+  }
 }

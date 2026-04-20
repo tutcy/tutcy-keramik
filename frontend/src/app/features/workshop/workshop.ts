@@ -1,9 +1,12 @@
 import {Component} from '@angular/core';
 import {httpResource} from '@angular/common/http';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-workshop',
-  imports: [],
+  imports: [
+    TranslatePipe
+  ],
   templateUrl: './workshop.html',
   styleUrl: './workshop.css',
 })
