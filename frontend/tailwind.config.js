@@ -4,6 +4,9 @@ module.exports = {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      backgroundImage: {
+        'banner': "url('/assets/images/banner.jpg')",
+      },
       colors: {
         // Hier wird die CSS-Variable auf einen Tailwind-Namen gemappt
         primary: 'var(--color-primary)',
@@ -12,10 +15,13 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(function ({addBase}) {
+    plugin(function ({addBase, theme}) {
       addBase({
+        'body': {
+          backgroundImage: theme('backgroundImage.banner'),
+        },
         '[data-theme="light"]': {
-          '--color-primary': '#ffffff',
+          '--color-primary': '#ffffff', // Usage <nav class="bg-primary">
           '--color-text': '#000000',
           // Deine Variablen oder Styles hier
         },
@@ -27,6 +33,9 @@ module.exports = {
           '--color-primary': '#2A9D8F',
           '--color-secondary': '#E9C46A',
           '--color-text': '#264653',
+          '--image': {
+            'banner': "url('/assets/images/banner.jpg')"
+          }
         },
         '[data-theme="winter"]': {
           '--color-primary': 'hsl(45 39% 69%)',
