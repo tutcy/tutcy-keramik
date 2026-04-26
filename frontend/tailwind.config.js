@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'banner': "url('/assets/images/banner.jpg')",
+        'banner': "url('/assets/images/banner.png')",
       },
       colors: {
         // Hier wird die CSS-Variable auf einen Tailwind-Namen gemappt
@@ -30,12 +30,9 @@ module.exports = {
           '--color-text': '#ffffff',
         },
         '[data-theme="forest"]': {
-          '--color-primary': '#2A9D8F',
+          '--color-primary': '#eab23d',
           '--color-secondary': '#E9C46A',
           '--color-text': '#264653',
-          '--image': {
-            'banner': "url('/assets/images/banner.jpg')"
-          }
         },
         '[data-theme="winter"]': {
           '--color-primary': 'hsl(45 39% 69%)',
